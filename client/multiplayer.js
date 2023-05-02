@@ -110,8 +110,6 @@ function doClick() {
 
         }
     }
-    console.log(arrX);
-    console.log(arrO);
     // send a message to the server
     socket.emit('move',{
             socks: sockId,
@@ -127,7 +125,6 @@ socket.on('move', (data) => {
     if(sock.length < 2) {
         sock.push(socks);
     }
-    console.log("socks:",sock);
     $('#' + index).html(`<img src="../components/${player}.svg" style="width: 80%;height: 80%;" alt="${player}"/>`);
     // update the current player value based on the value received from the server
     CurrentPlayer = currentPlayer;
