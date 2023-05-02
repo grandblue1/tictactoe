@@ -129,7 +129,7 @@ socket.on('move', (data) => {
     // update the current player value based on the value received from the server
     CurrentPlayer = currentPlayer;
     let who = CurrentPlayer === "O" ? "O" : "X";
-    $("#h2").text(who + " is now walking");
+    $("#h2").text(who + " is turn");
 });
 socket.on('gameOver', msg => {
     showPopup(msg);
@@ -153,6 +153,6 @@ function restartGame() {
     arrX = [];
     arrO = [];
     $('td').empty().click(doClick); // Clear the board and reattach click event handler
-    $("#h2").text("O" + "  is now walking");
+    $("#h2").text("O" + "  is turn");
 
 }
