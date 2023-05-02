@@ -52,7 +52,7 @@ function doClick() {
     } else {
         arrO.push(cellId);
     }
-    $("#h2").text(CurrentPlayer + " is now walking");
+    $("#h2").text(CurrentPlayer + " is now turn");
     //Checking for winning combinations
     if (arrX.length >= 3 || arrO.length >= 3) {
         for (let i = 0; i < winningCombinations.length; i++) {
@@ -129,7 +129,7 @@ socket.on('move', (data) => {
     // update the current player value based on the value received from the server
     CurrentPlayer = currentPlayer;
     let who = CurrentPlayer === "O" ? "O" : "X";
-    $("#h2").text(who + " is turn");
+    $("#h2").text(who + " is now turn");
 });
 socket.on('gameOver', msg => {
     showPopup(msg);
