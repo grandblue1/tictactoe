@@ -14,4 +14,4 @@ Start the server using the command: ```npm run start``` or ```node server.js```
 #
 Open the following URL in your browser: ```localhost:3000```
 #
-![image](https://user-images.githubusercontent.com/109659492/236633780-cf6c11f0-d40a-4c23-b3cb-6200a8c1eafb.png)
+<img src="https://user-images.githubusercontent.com/109659492/236633780-cf6c11f0-d40a-4c23-b3cb-6200a8c1eafb.png" height=400px>
