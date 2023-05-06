@@ -18,7 +18,9 @@ Open the following URL in your browser: ```localhost:3000```
 #
 If u want to play with bot click on ```Single mode```
 #
-By clicking on Multiplayer opened the lobby input,where u can play with another players by creating a lobby and ask second player lobby name
+<img src="https://user-images.githubusercontent.com/109659492/236634431-d7545a59-54e5-471f-a72f-ddba5a6853c1.png" height=400px>.
+#
+By clicking on ```Multiplayer``` opened the lobby input,where u can play with another players by creating a lobby and ask second player lobby name
 #
 <img src="https://user-images.githubusercontent.com/109659492/236634356-2534ca93-a5a5-4866-8683-afd81e4ec1a2.png">.
 
