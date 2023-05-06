@@ -1,7 +1,6 @@
-# tictactoe
-                                                Tic Tac Toe game
+#                                                                     Tic Tac Toe game 
 #
-![image](https://user-images.githubusercontent.com/109659492/236633823-98ebb148-c9db-4f7e-b5e2-48b6121121fe.png)
+![image](https://user-images.githubusercontent.com/109659492/236633875-65eb692a-3224-43d8-9a81-785c74025145.png)
 #
 ```Open Git Bash```
 #
