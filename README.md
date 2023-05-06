@@ -5,7 +5,8 @@ Tic Tac Toe game
 #
 ```git clone https://github.com/grandblue1/tictactoe```
 #
-```cd tictactoe/server```
+go to the file where server is in ```cd tictactoe/server```
+#
 (install all required dependencies) ```npm i```
 #
 run server by ```npm run start``` or ```node server.js```
