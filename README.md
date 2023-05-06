@@ -1,6 +1,6 @@
 #                                                                     Tic Tac Toe game 
 #
-![image|250x250](https://user-images.githubusercontent.com/109659492/236633875-65eb692a-3224-43d8-9a81-785c74025145.png)
+![image|250x250,50%](https://user-images.githubusercontent.com/109659492/236633875-65eb692a-3224-43d8-9a81-785c74025145.png)
 #
 ```Open Git Bash```
 #
