@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     $(".btn-lobby-join").on("click", function() {
-        let inputValue = $(".input").val();
+        let inputValue = $(this).text().split(':')[1];
         socket.emit("joinLobby", inputValue);
 
     });
@@ -65,25 +65,35 @@ $(document).ready(function() {
         const lobbyName = data.lobbyName;
         if(lobbyLists.includes(lobbyName)){
             $("#" + lobbyName + " p").text(`2/2`);
+            const lobbyData = {
+                numOfPlayers: numOfPlayers,
+                lobbyName: lobbyName
+            };
+            localStorage.setItem(lobbyName, JSON.stringify(lobbyData));
         }else{
             lobbyLists.push(lobbyName);
             let new_lobby = document.createElement('div');
             let div_parent = document.querySelector('.scroll-container');
             new_lobby.setAttribute("class", "scroll-page");
-            new_lobby.innerHTML = `Lobby Name: ${lobbyName}   <p id=lobbyName>${numOfPlayers}/2</p> <button class="btn-join-lobby" style="margin-left: 15px;margin-bottom: 0;width: 100px;height: 35px; display: inline-block">Join</button> `;
+            new_lobby.innerHTML = `Lobby Name: <h5 class="${lobbyName}">${lobbyName}</h5>   <p id=lobbyName>${numOfPlayers}/2</p> <button class="btn-join-lobby" style="margin-left: 15px;margin-bottom: 0;width: 100px;height: 35px; display: inline-block">Join</button> `;
             new_lobby.setAttribute('id' , lobbyName);
             /*new_lobby.appendChild(buttonJoin);*/
 
             div_parent.addEventListener('click', (event) => {
                 if (event.target.classList.contains('btn-join-lobby')) {
-                    let inputValue = $(".input").val();
+                    let inputValue = $('.' + lobbyName).text();
+                    console.log(inputValue);
                     socket.emit("joinLobby", inputValue);
                 }
             });
 
             div_parent.appendChild(new_lobby);
 
-
+            const lobbyData = {
+                numOfPlayers: numOfPlayers,
+                lobbyName: lobbyName
+            };
+            localStorage.setItem(lobbyName, JSON.stringify(lobbyData));
         }
     });
 

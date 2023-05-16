@@ -19,6 +19,7 @@ function showPopupMenu() {
         $('.singleMode').on('click', function () {
             $('.popup-menu').css('display', 'none');
             $('.container').css('display', 'block');
+            $('.lobby_container').css('display', 'none');
             $('#h2').text('');
             if (!$('html head').find('script[src="minimax.js"]').length) {
                 loadMinimaxScript();
