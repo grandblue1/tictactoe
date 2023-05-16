@@ -22,4 +22,7 @@ To play with bot click on the ```Single mode``` button:
 #
 To play with another player, click on the ``` Multiplayer``` button. This will open the lobby input, where you can create a lobby and waiting for another player. They can then join to your lobby by clicking button ```Join ```.
 #
+#
+Also by click on the first example lobby you will redirected to game with ai bot
+#
 <img src="https://github.com/grandblue1/tictactoe/assets/109659492/efeb0471-118c-4a15-a22f-b615243567b4">.
