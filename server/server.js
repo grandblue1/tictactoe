@@ -50,6 +50,7 @@ io.on('connection', (socket) => {
                         hashTable[lobbies[lobbyName][i]] = true;
                     }
                 }
+
                 let num = lobbies[lobbyName].length;
                 io.emit('valueOfLobby',{num, lobbyName});
                 io.to(lobbies[lobbyName][0]).emit('startGame');
