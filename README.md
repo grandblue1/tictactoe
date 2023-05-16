@@ -20,6 +20,6 @@ To play with bot click on the ```Single mode``` button:
 #
 <img src="https://user-images.githubusercontent.com/109659492/236634431-d7545a59-54e5-471f-a72f-ddba5a6853c1.png" height=400px>.
 #
-To play with another player, click on the ``` Multiplayer``` button. This will open the lobby input, where you can create a lobby and share the lobby name with the second player. They can then join your lobby using the shared name.
+To play with another player, click on the ``` Multiplayer``` button. This will open the lobby input, where you can create a lobby and waiting for another player. They can then join to your lobby by clicking button ```Join ```.
 #
 <img src="https://github.com/grandblue1/tictactoe/assets/109659492/efeb0471-118c-4a15-a22f-b615243567b4">.
