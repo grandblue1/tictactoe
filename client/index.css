@@ -88,6 +88,9 @@ img {
 button{
     font-family: 'Bruno Ace', cursive;
 }
+
+
+
 @keyframes appear {
     0% {
         transform: scale(0);

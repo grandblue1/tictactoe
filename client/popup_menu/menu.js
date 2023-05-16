@@ -1,6 +1,5 @@
 
 function showPopupMenu() {
-
     $(document).keyup(function(e) {
         if (e.key === "Escape") {  // keypress="27
             $('.popup-menu').css('display', 'block');
@@ -9,6 +8,8 @@ function showPopupMenu() {
             $('.popup-menu').css("left", "25%");
             $('.popup-menu').addClass("animate__animated animate__bounce");
             $('.container').css('display', 'none');
+            window.location.href = "/";
+            window.location.reload();
         }
     });
     $(document).ready(function() {

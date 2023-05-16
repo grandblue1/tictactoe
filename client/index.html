@@ -10,7 +10,6 @@
 
     <script src="popup_game_end/popup.js"></script>
     <script src="popup_menu/menu.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="popup_game_end/popup.css">
     <link rel="stylesheet" href="popup_menu/menu.css">
@@ -21,7 +20,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
     </style>
     <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
-
 </head>
 <body >
 
@@ -55,12 +53,17 @@
     </div>
     <div class="lobby_container" style="display: none;flex-direction: column;align-items: center;justify-content: center;height: 100vh" >
             <div class="lobby-input" style="display: flex;flex-direction: column;align-items: center;justify-content: center;background: #fff;
-                   padding: 20px;border-radius: 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);width: 500px;
+                   padding: 20px;border-radius: 10px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);width: 700px; height: 500px;
                 ">
                 <input type="text" class="input" placeholder="Enter lobby name">
-                <div class="button-container" style="display: flex;width: 100%;justify-content: space-between;margin-top: 20px">
-                    <button class="btn-lobby-create" type="submit">Create Lobby</button>
-                    <button class="btn-lobby-join" type="submit">Join to the Lobby</button>
+                <button class="btn-lobby-create" type="submit">Create Lobby</button>
+                <div class="scroll-container">
+                    <div class="scroll-page" >Lobby Name: ass <p>1/2</p> </div>
+
+                </div>
+
+
+                    <!--<button class="btn-lobby-join" type="submit">Join to the Lobby</button>-->
 
                 </div>
             </div>
