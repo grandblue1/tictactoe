@@ -22,9 +22,14 @@ io.on('connection', (socket) => {
         if (!lobbies[lobbyName]) {
             lobbies[lobbyName] = [socket.id];
             socket.emit('joinedLobby', lobbyName);
-
-        } else {
-            socket.emit('lobbyFull');
+            //
+            let num = lobbies[lobbyName].length;
+            io.emit('valueOfLobby',{num ,lobbyName});
+            //
+        } else if (lobbies[lobbyName]) {
+            socket.emit('lobbyExist', lobbyName);
+        }else{
+            socket.emit('disconnect');
         }
     });
     // When a player clicks on the game board, send the event to the other player
@@ -33,7 +38,9 @@ io.on('connection', (socket) => {
             lobbies[lobbyName].push(socket.id);
             socket.join(lobbyName);
             socket.emit('joinedLobby', lobbyName);
+
             if (lobbies[lobbyName].length === 2) {
+
                 const hashTable = {};
                 for (let i = 0; i < lobbies[lobbyName].length; i++) {
                     if (hashTable[lobbies[lobbyName][i]]) {
@@ -43,8 +50,8 @@ io.on('connection', (socket) => {
                         hashTable[lobbies[lobbyName][i]] = true;
                     }
                 }
-
-                console.log(`Starting game in lobby ${lobbyName}`);
+                let num = lobbies[lobbyName].length;
+                io.emit('valueOfLobby',{num, lobbyName});
                 io.to(lobbies[lobbyName][0]).emit('startGame');
                 io.to(lobbies[lobbyName][1]).emit('startGame');
             }
@@ -60,7 +67,6 @@ io.on('connection', (socket) => {
         const player = data.player === "X" ? "O" : "X";
         const currentPlayer = data.currentPlayer; // get the current player value from the client
         const socks = data.socks;
-        console.log("This is current player move: ", player);
         io.emit('move', {index, player, currentPlayer,socks}); // send the current player value back to the client
     });
     socket.on('gameOver', (data)  => {
@@ -75,10 +81,18 @@ io.on('connection', (socket) => {
                 players.splice(playerIndex, 1);
                 if (players.length === 1) {
                     socket.to(players[0]).emit('opponentDisconnected');
+                    io.emit('GameOvered', lobbyName);
+                    io.in(lobbies[lobbyName]).socketsLeave(lobbies[lobbyName]);
+                    io.in(lobbies[lobbyName]).disconnectSockets(true);
                     delete lobbies[lobbyName];
+
                 }
+                io.in(lobbies[lobbyName]).disconnectSockets(true);
+                delete lobbies[lobbyName];
                 break;
+
             }
+
         }
     })
 });
